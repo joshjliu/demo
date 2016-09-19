@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample for Verse Extension</title>
+
+  <style type="text/css">
+    body {   font-family: "Open Sans", sans-serif; }
+  </style>
+    <script>
+    var opener = window.opener;
+    if (opener) {
+      var message = {
+        verseApiType : "com.ibm.verse.widget.loaded",
+        verseApiData : {widgetId: "com.ibm.verse.ext.sample"}
+      };
+      opener.postMessage(message, '*');
+
+      message = {
+        verseApiType : "com.ibm.verse.widget.update",
+        verseApiData : {
+          action: "add",
+          widget: {
+            "id": "com.ibm.verse.ext.sample2.1",
+            "url": "https://git.swg.usma.ibm.com/pages/IBM-Verse/verse-developer-chrome-ext/tutorials/tutorial-mail.compose.html",
+            "rawExtensionData": [
+              {
+                "type": "com.ibm.verse.action", 
+                "id": "com.ibm.verse.ext.sample2.action", 
+                "path": "mail.compose", 
+                "title": "Tutorial-for mail compose"
+              }
+            ],
+            
+            "renderParams" : {
+              "width" : "900",
+              "height" : "400"
+            },
+            
+            "features" : []
+          }
+        }
+      };
+      opener.postMessage(message, '*');
+
+      window.addEventListener("message", function(event) {
+//      window.addEventListener("load", function(event) {
+        console.log("========================location.search", window.location.search);
+        console.log("========================event", event);
+        document.getElementById("search_part").innerHTML = window.location.search;
+      }, false);
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <h1>Demo for Verse Extension</h1>
+
+  <p><h3>Search Part of URL: </h3><span id="search_part"></span></span></p>
+</body>
+</html>
