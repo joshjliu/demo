@@ -22,7 +22,7 @@
         verseApiData : {
           action: "add",
           widget: {
-            "id": "com.ibm.verse.ext.sample2.1",
+            "id": "com.ibm.verse.ext.sample2.1_add",
             "url": "https://joshjliu.github.io/demo/sample_remove.html",
             "rawExtensionData": [
               {
@@ -30,6 +30,33 @@
                 "id": "com.ibm.verse.ext.sample2.action", 
                 "path": "mail.compose", 
                 "title": "Remove myself"
+              }
+            ],
+            
+            "renderParams" : {
+              "width" : "900",
+              "height" : "400"
+            },
+            
+            "features" : []
+          }
+        }
+      };
+      opener.postMessage(message, '*');
+      
+      message = {
+        verseApiType : "com.ibm.verse.widget.update",
+        verseApiData : {
+          action: "add",
+          widget: {
+            "id": "com.ibm.verse.ext.sample2.1_update",
+            "url": "https://joshjliu.github.io/demo/sample_update.html",
+            "rawExtensionData": [
+              {
+                "type": "com.ibm.verse.action", 
+                "id": "com.ibm.verse.ext.sample2.action", 
+                "path": "mail.compose", 
+                "title": "update myself"
               }
             ],
             
