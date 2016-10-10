@@ -37,7 +37,7 @@
         if (eventData.verseApiType === "com.ibm.verse.action.clicked") {
 		      var actionData = eventData.verseApiData;
           console.log("========================actionData.actionId", actionData.actionId);
-          if (actionData.actionId === "com.ibm.verse.ext.sample2.action") {
+          if (actionData.actionId === "com.ibm.verse.ext.mail.crossWindow_jun1") {
             var message = actionData.context;
             if (message && message.subject) {
               document.getElementById("subject").innerHTML = message.subject;
