@@ -26,7 +26,7 @@
     var opener = window.opener;
     if (opener) {
       var message = {
-        verseApiType : "com.ibm.verse.widget.loaded",
+        verseApiType : "com.ibm.verse.application.loaded",
       };
       opener.postMessage(message, '*');
       console.log("========================opener", opener);
@@ -45,9 +45,9 @@
               document.getElementById("mailBody").innerHTML = message.body;
             }
           }
-        } else if (eventData.verseApiType === "com.ibm.verse.action.clicked") {
+        } else if (eventData.verseApiType === "com.ibm.verse.application.loaded") {
           var message = {
-            verseApiType : "com.ibm.verse.widget.loaded",
+            verseApiType : "com.ibm.verse.application.loaded",
           };
           opener.postMessage(message, '*');
           console.log("========================opener", opener);
