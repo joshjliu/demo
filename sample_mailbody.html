@@ -36,6 +36,7 @@
         console.log("========================eventData", eventData);
         if (eventData.verseApiType === "com.ibm.verse.action.clicked") {
 		      var actionData = eventData.verseApiData;
+          console.log("========================actionData.actionId", actionData.actionId);
           if (actionData.actionId === "com.ibm.verse.ext.sample2.action") {
             var message = actionData.context;
             if (message && message.subject) {
